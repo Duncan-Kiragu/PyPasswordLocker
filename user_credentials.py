@@ -57,3 +57,27 @@ class Credential:
 		Credential.credentials_list.append(self)
 	#function to generate passwords
 	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits)
+		'''
+		Generate 8-char password as recommended for cc
+		'''
+		gen=''.join(random.choice(char) for _ in range(size))
+		return gen
+
+	@classmethod
+	def display_credentials(cls,u_name)
+		'''
+		Display credentials saved
+		'''
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.u_name == u_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
+
+	@classmethod
+	def find_by_s_name(cls,s_name)
+	user_credentials_list = []
+	for credential in cls.credentials_list:
+		if credential.u_name == u_name:
+			user_credentials_list.append(credential)
+	return user_credentials_list
