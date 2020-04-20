@@ -23,3 +23,28 @@ class Credential:
 	'''
 	Class for account credentials; passwords and saving info
 	'''
+
+	#Class_Variables
+	credentials_list = []
+	user_credentials_list = []
+	@classmethod
+	def check_user(cls,fname,pwd)
+		'''
+		To authenticate using matching entries for name and password saved
+		'''
+
+		current_user = ''
+		for user in User.users_list:
+			if (user.fname == fname and user.pwd == pwd):
+				current_user = user.fname
+		return current_user
+
+	def __init__(self,u_name,s_name,acc_name,pwd)
+		'''
+		Defining properties held by each user object
+		'''
+
+		#Variables
+		self.u_name = u_name
+		self.s_name = s_name
+		self.acc_name = acc_name
