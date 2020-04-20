@@ -28,17 +28,16 @@ Choose an option: CC - Create Credential,
    DT - delete credential |
 
 
-**Enter: CC** | Enter the site name, your username and password |
+|**Enter: CC** | Enter the site name, your username and password |
 
 
 **Enter: DC** | Prints a list of saved credentials |
 
 
-**Enter: COPY** | Enter the site name of the credential you wish to copy. |
-|**Enter: EX**|
+|**Enter: COPY** | Enter the site name of the credential you wish to copy. |
 
 
-**Enter: EX** | Exit the current navigation stage |
+|**Enter: EX** | Exit the current navigation stage |
 
 
 ## Installation requirements
@@ -47,7 +46,7 @@ Choose an option: CC - Create Credential,
 * Pyperclip
 * Xclip
 
-### Project access
+## Project access
 * Download the zip folder available on clicking the green clone/download button 
 	(https://github.com/Duncan-Kiragu/PyPasswordLocker/archive/master.zip)
 
@@ -56,21 +55,22 @@ Choose an option: CC - Create Credential,
         $ git clone https://github.com/Duncan-Kiragu/PyPasswordLocker.git
         $ cd PyPasswordLocker
 
-### Project running
+## Project running
 
 * To run the PyApp, in your terminal:
 
-	$ chmod +x PyPasswordLocker.py
-        $ ./PyPasswordLocker.py
+>	    $ chmod +x PyPasswordLocker.py
+
+>        $ ./PyPasswordLocker.py
         
 
-### App testing
+## App testing
 
 * The PyApp used unittesting to test its files
 
 * However, more tests can be run on the terminal or cmd using
 
-	 $ python3.6 user_credentials_test.py
+>	 $ python3.6 user_credentials_test.py
 
 
 ## Known bugs
