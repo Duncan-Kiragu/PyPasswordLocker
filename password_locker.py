@@ -20,7 +20,7 @@ def verify_user(fname,pwd):
 	Function that verifies the pwd of the user before creating credentials
 	'''
 	checking_user = Credential.check_user(fname,pwd)
-	return checking_userpwd
+	return checking_user
 
 def generate_password():
 	'''
