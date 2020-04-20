@@ -20,7 +20,7 @@ def verify_user(fname,pwd):
 	Function that verifies the pwd of the user before creating credentials
 	'''
 	checking_user = Credential.check_user(fname,pwd)
-	return checking_user
+	return checking_userca
 
 def generate_password():
 	'''
@@ -47,7 +47,13 @@ def display_credentials(u_name):
 	Function to display credentials saved by a user
 	'''
 	return Credential.display_credentials(u_name)
-	
+
+def delete_user_account(Credentials):
+	'''
+	Function to delete account
+	'''
+	Credentials.delete_user_account(acc_name)
+
 def copy_credential(s_name):
 	'''
 	Function to copy a credentials details to the clipboard
@@ -91,6 +97,7 @@ def main():
 					print('Navigation codes: \n CC - Create a Credential \n DC - Display Credentials \n COPY - Copy pwd \n EX-Exit')
 					short_code = input('Enter a navigation code: ').upper().strip()
 					print("-"*60)
+					#Putting horizontal spaced hyphens for distinction
 					if short_code == 'EX':
 						print(" ")
 						print(f'Session closed for {u_name}')

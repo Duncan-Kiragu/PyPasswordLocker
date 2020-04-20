@@ -106,3 +106,6 @@ class Credential:
 		find_credential = Credential.find_by_s_name(s_name)
 		return pyperclip.copy(find_credential.pwd)
 
+	@classmethod
+	def delete_user_account(self):
+		Credentials.users_list.remove(self)
