@@ -48,3 +48,12 @@ class Credential:
 		self.u_name = u_name
 		self.s_name = s_name
 		self.acc_name = acc_name
+		self.pwd = pwd 
+    #saving credentials
+	def save_credentials(self):
+		'''
+		Saves new instances created by users
+		'''
+		Credential.credentials_list.append(self)
+	#function to generate passwords
+	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits)
