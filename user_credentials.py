@@ -1,3 +1,9 @@
+import pyperclip
+import random
+import string
+
+# Global Variables
+global users_list 
 class User:
 	'''
 	A class for creating accounts and saving account info

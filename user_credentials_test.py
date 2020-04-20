@@ -19,9 +19,9 @@ class TestUser(unittest.TestCase):
 		'''
 		Checking initialization of instances "using the variables"
 		'''
-		self.assertEqual(self.new_user.first_name,'Duncan')
-		self.assertEqual(self.new_user.last_name,'Kiragu')
-		self.assertEqual(self.new_user.password,'pwd2001')
+		self.assertEqual(self.new_user.fname,'Duncan')
+		self.assertEqual(self.new_user.lname,'Kiragu')
+		self.assertEqual(self.new_user.pwd,'pwd2001')
 
 	def test_save_user(self):
 		'''
@@ -47,11 +47,11 @@ class TestCredentials(unittest.TestCase):
 		user2.save_user()
 
 		for user in User.users_list:
-			if user.f_name == user2.f_name and user.pwd == user2.password:
+			if user.f_name == user2.f_name and user.pwd == user2.pwd:
 				current_user = user.f_name
 		return current_user
 
-		self.assertEqual(current_user,Credential.check_user(user2.password,user2.f_name))
+		self.assertEqual(current_user,Credential.check_user(user2.pwd,user2.f_name))
 
 	def setUp(self):
 		'''
@@ -63,10 +63,10 @@ class TestCredentials(unittest.TestCase):
 		'''
 		Initialization of credential instances "using credential instances"
 		'''
-		self.assertEqual(self.new_credential.user_name,'Duncan')
-		self.assertEqual(self.new_credential.site_name,'Facebook')
-		self.assertEqual(self.new_credential.account_name,'CoolDun')
-		self.assertEqual(self.new_credential.password,'pwd2001')
+		self.assertEqual(self.new_credential.u_name,'Duncan')
+		self.assertEqual(self.new_credential.s_name,'Facebook')
+		self.assertEqual(self.new_credential.acc_name,'CoolDun')
+		self.assertEqual(self.new_credential.pwd,'pwd2001')
 
 	def test_save_credentials(self):
 		'''
@@ -76,14 +76,6 @@ class TestCredentials(unittest.TestCase):
 		twitter = Credential('Mathenge','Twitter','CoolDun','pwd2001')
 		twitter.save_credentials()
 		self.assertEqual(len(Credential.credentials_list),2)
-
-	# def test_generate_password(self):
-	# 	'''
-	# 	Test to check if the generate password generates 8 char password
-	# 	'''
-	# 	self.twitter = Credential('Twitter','maryjoe','')
-	# 	self.twitter.password = generate_password()
-	# 	self.assertEqual()
 
 	def tearDown(self):
 		'''
@@ -101,7 +93,7 @@ class TestCredentials(unittest.TestCase):
 		twitter.save_credentials()
 		gmail = Credential('Duncan','Gmail','CoolDun','pwd2001')
 		gmail.save_credentials()
-		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
+		self.assertEqual(len(Credential.display_credentials(twitter.u_name)),2)
 
 	def test_find_by_s_name(self):
 		'''
@@ -118,11 +110,12 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the copy a credential method copies the correct credential
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Duncan','Twitter','CoolDun','pwd2001')
+
+		Twitter = Credential('Mathenge','Twitter','CoolDun','pwd2001')
 		twitter.save_credentials()
 		find_credential = None
 		for credential in Credential.user_credentials_list:
-				find_credential =Credential.find_by_site_name(credential.s_name)
+				find_credential =Credential.find_by_s_name(credential.s_name)
 				return pyperclip.copy(find_credential.pwd)
 		Credential.copy_credential(self.new_credential.s_name)
 		self.assertEqual('pwd2001',pyperclip.paste())
