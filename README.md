@@ -14,13 +14,32 @@ PyPasswordLocker is a python application run on the terminal that allows the use
 | **Enter: CA** | Enter your first name, last name and password |
 
 | **Enter: li** | Enter your account name and password |
+
+
 | **Successful login** | 
-Choose an option: CC - Create Credential, DC - Display Credentials, COPY - Copy Credential, EX - exit, DT - delete credential |
+Choose an option: CC - Create Credential,
+
+ DC - Display Credentials, 
+ 
+ COPY - Copy Credential,
+ 
+  EX - exit,
+  
+   DT - delete credential |
+
+
 **Enter: CC** | Enter the site name, your username and password |
+
+
 **Enter: DC** | Prints a list of saved credentials |
+
+
 **Enter: COPY** | Enter the site name of the credential you wish to copy. |
 |**Enter: EX**|
-| Exit application | **Enter: EX** | Exit the current navigation stage |
+
+
+**Enter: EX** | Exit the current navigation stage |
+
 
 ## Installation requirements
 * Python 3.8.2 - Downloaded from (python.org)
