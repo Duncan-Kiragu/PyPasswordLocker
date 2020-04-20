@@ -9,7 +9,8 @@ PyPasswordLocker is a python application run on the terminal that allows the use
 ## Specifications
 | Behaviour | Input | Output |
 | :---------------- | :---------------: | ------------------: |
-| Display codes for navigation | **In terminal: $./password_locker.py** | Welcome, choose an option: CA-Create Account, LI-Log In, EX-Exit |
+| Display codes for navigation | **In terminal: $./password_locker.py** | Welcome,
+ choose an option: CA-Create Account, LI-Log In, EX-Exit |
 
 | **Enter: CA** | Enter your first name, last name and password |
 
@@ -17,15 +18,16 @@ PyPasswordLocker is a python application run on the terminal that allows the use
 
 
 | **Successful login** | 
-Choose an option: CC - Create Credential,
+Choose an option:
+>	CC - Create Credential,
 
- DC - Display Credentials, 
- 
- COPY - Copy Credential,
- 
-  EX - exit,
-  
-   DT - delete credential |
+>	DC - Display Credentials, 
+	
+>	COPY - Copy Credential,
+	
+>	EX - exit,
+	
+>	DT - delete credential |
 
 
 |**Enter: CC** | Enter the site name, your username and password |
