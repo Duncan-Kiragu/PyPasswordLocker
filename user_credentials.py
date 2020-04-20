@@ -18,3 +18,8 @@ class User:
 		Takes new instances created by user and saves them
 		'''
 		User.users_list.append(self)
+
+class Credential:
+	'''
+	Class for account credentials; passwords and saving info
+	'''
