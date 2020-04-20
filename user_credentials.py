@@ -81,3 +81,22 @@ class Credential:
 		if credential.u_name == u_name:
 			user_credentials_list.append(credential)
 	return user_credentials_list
+
+
+	@classmethod
+	def find_by_s_name(cls, s_name):
+		'''
+		Looking up credentials with the same site name
+		'''
+		for credential in cls.credentials_list:
+			if credential.s_name == s_name:
+				return credential
+
+	@classmethod
+	def copy_credential(cls,site_name):
+		'''
+		Method for copying credentials info
+		'''
+		find_credential = Credential.find_by_s_name(s_name)
+		return pyperclip.copy(find_credential.pwd)
+
