@@ -17,16 +17,16 @@ def save_user(user):
 
 def verify_user(fname,pwd):
 	'''
-	Function that verifies the existance of the user before creating credentials
+	Function that verifies the pwd of the user before creating credentials
 	'''
 	checking_user = Credential.check_user(fname,pwd)
-	return checking_user
+	return checking_userpwd
 
-def generate_pwd():
+def generate_password():
 	'''
 	Function to generate a pwd automatically
 	'''
-	gen = Credential.generate_pwd()
+	gen = Credential.generate_password()
 	return gen
 
 def create_credential(u_name,s_name,acc_name,pwd):
@@ -75,7 +75,7 @@ def main():
 			save_user(create_user(fname,lname,pwd))
 			print(" ")
 			print(f'New Account Created for: {fname} {lname} using password: {pwd}')
-		elif short_code == 'li':
+		elif short_code == 'LI':
 			print("-"*60)
 			print(' ')
 			print('To login,please enter your account details:')
@@ -111,7 +111,7 @@ def main():
 								pwd = input('Enter your pwd: ').strip()
 								break
 							elif psw_choice == 'GP':
-								pwd = generate_pwd()
+								pwd = generate_password()
 								break
 							elif psw_choice == 'EX':
 								break

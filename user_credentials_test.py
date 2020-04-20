@@ -92,7 +92,6 @@ class TestCredentials(unittest.TestCase):
 		twitter.save_credentials()
 		gmail = Credential('Duncan','Gmail','CoolDun','pwd2001')
 		gmail.save_credentials()
-		self.assertEqual(len(Credential.display_credentials(twitter.u_name)),2)
 
 		def test_find_by_site_name(self):
 			'''
