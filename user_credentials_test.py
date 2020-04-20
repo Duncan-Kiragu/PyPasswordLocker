@@ -1,5 +1,4 @@
 import unittest
-import pyperclip
 from user_credentials import User, Credential
 
 class TestUser(unittest.TestCase):
@@ -47,8 +46,8 @@ class TestCredentials(unittest.TestCase):
 		user2.save_user()
 
 		for user in User.users_list:
-			if user.f_name == user2.f_name and user.pwd == user2.pwd:
-				current_user = user.f_name
+			if user.fname == user2.fname and user.pwd == user2.pwd:
+				current_user = user.fname
 		return current_user
 
 		self.assertEqual(current_user,Credential.check_user(user2.pwd,user2.f_name))
@@ -95,31 +94,30 @@ class TestCredentials(unittest.TestCase):
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.u_name)),2)
 
-	def test_find_by_s_name(self):
-		'''
-		Use the site name to find
-		'''
-		self.new_credential.save_credentials()
-		twitter = Credential('Duncan','Twitter','CoolDun','pwd2001'')
-		twitter.save_credentials()
-		credential_exists = Credential.find_by_s_name('Twitter')
-		self.assertEqual(credential_exists,twitter)
+		def test_find_by_site_name(self):
+			'''
+			Test to check if the find_by_site_name method returns the correct credential
+			'''
+			self.new_credential.save_credentials()
+			twitter = Credential('Duncan','Twitter','CoolDun','pswd100')
+			twitter.save_credentials()
+			credential_exists = Credential.find_by_site_name('Twitter')
+			self.assertEqual(credential_exists,twitter)
 
-	def test_copy_credential(self):
-		'''
-		Test to check if the copy a credential method copies the correct credential
-		'''
-		self.new_credential.save_credentials()
-
-		Twitter = Credential('Mathenge','Twitter','CoolDun','pwd2001')
-		twitter.save_credentials()
-		find_credential = None
-		for credential in Credential.user_credentials_list:
-				find_credential =Credential.find_by_s_name(credential.s_name)
-				return pyperclip.copy(find_credential.pwd)
-		Credential.copy_credential(self.new_credential.s_name)
-		self.assertEqual('pwd2001',pyperclip.paste())
-		print(pyperclip.paste())
+		def test_copy_credential(self):
+			'''
+			Test to check if the copy a credential method copies the correct credential
+			'''
+			self.new_credential.save_credentials()
+			twitter = Credential('Duncan','Twitter','CoolDun','pswd100')
+			twitter.save_credentials()
+			find_credential = None
+			for credential in Credential.user_credentials_list:
+					find_credential =Credential.find_by_site_name(credential.site_name)
+					return pyperclip.copy(find_credential.password)
+			Credential.copy_credential(self.new_credential.site_name)
+			self.assertEqual('pwd2001',pyperclip.paste())
+			print(pyperclip.paste())
 
 if __name__ == '__main__':
 	unittest.main(verbosity=2)

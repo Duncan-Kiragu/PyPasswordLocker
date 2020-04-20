@@ -1,5 +1,4 @@
-#! /usr/bin/env python3.8
-import pyperclip
+#! /usr/bin/env python3
 from user_credentials import User, Credential
 
 def create_user(fname,lname,pwd):

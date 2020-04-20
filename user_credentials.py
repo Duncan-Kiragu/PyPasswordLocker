@@ -1,5 +1,5 @@
-import pyperclip
 import random
+import pyperclip
 import string
 
 # Global Variables
@@ -8,8 +8,8 @@ class User:
 	'''
 	A class for creating accounts and saving account info
 	'''
-	users_list[]
-	def __init__(self,fname,lname,pwd)
+	users_list = []
+	def __init__(self,fname,lname,pwd):
 		'''
 		Creating method to define properties held by each user object
 		'''
@@ -19,7 +19,7 @@ class User:
 		self.lname = lname
 		self.pwd = pwd 
 
-	def save_user(self)
+	def save_user(self):
 		'''
 		Takes new instances created by user and saves them
 		'''
@@ -34,7 +34,7 @@ class Credential:
 	credentials_list = []
 	user_credentials_list = []
 	@classmethod
-	def check_user(cls,fname,pwd)
+	def check_user(cls,fname,pwd):
 		'''
 		To authenticate using matching entries for name and password saved
 		'''
@@ -45,7 +45,7 @@ class Credential:
 				current_user = user.fname
 		return current_user
 
-	def __init__(self,u_name,s_name,acc_name,pwd)
+	def __init__(self,u_name,s_name,acc_name,pwd):
 		'''
 		Defining properties held by each user object
 		'''
@@ -62,7 +62,7 @@ class Credential:
 		'''
 		Credential.credentials_list.append(self)
 	#function to generate passwords
-	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits)
+	def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
 		'''
 		Generate 8-char password as recommended for cc
 		'''
@@ -70,7 +70,7 @@ class Credential:
 		return gen
 
 	@classmethod
-	def display_credentials(cls,u_name)
+	def display_credentials(cls,u_name):
 		'''
 		Display credentials saved
 		'''
@@ -81,12 +81,12 @@ class Credential:
 		return user_credentials_list
 
 	@classmethod
-	def find_by_s_name(cls,s_name)
-	user_credentials_list = []
-	for credential in cls.credentials_list:
-		if credential.u_name == u_name:
-			user_credentials_list.append(credential)
-	return user_credentials_list
+	def find_by_s_name(cls,s_name):
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.u_name == u_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
 
 
 	@classmethod
